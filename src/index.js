@@ -2,4 +2,5 @@ import HashMap from "./hash-map";
 
 const testMap = new HashMap();
 
-testMap.hash('ok');
+console.log(testMap);
+testMap.hash('frog');

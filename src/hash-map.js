@@ -12,7 +12,6 @@ class HashMap {
             hashCode = (prime * hashCode + key.charCodeAt(i));
         }
 
-        console.log(hashCode);
         console.log(hashCode % this.map.length);
         return hashCode % this.map.length;
     }
