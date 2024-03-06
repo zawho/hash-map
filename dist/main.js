@@ -16,7 +16,7 @@
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass HashMap {\n\n    constructor() {\n        this.map = new Array(16);\n    }\n\n    hash(key) {\n        const prime = 31;\n        let hashCode = 0;\n\n        for (let i = 0; i < key.length; i++) {\n            hashCode = (prime * hashCode + key.charCodeAt(i));\n        }\n\n        console.log(hashCode % this.map.length);\n        return hashCode % this.map.length;\n    }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HashMap);\n\n/* if (index < 0 || index >= buckets.length) {\n  throw new Error(\"Trying to access index out of bound\");\n} */\n\n//# sourceURL=webpack://hash-map/./src/hash-map.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass HashMap {\n\n    constructor() {\n        this.map = new Array(16);\n    }\n\n    hash(key) {\n        const prime = 31;\n        let hashCode = 0;\n\n        for (let i = 0; i < key.length; i++) {\n            hashCode = (prime * hashCode + key.charCodeAt(i));\n        }\n\n        console.log(`${key} will go to bucket ${hashCode % this.map.length}`);\n        return hashCode % this.map.length;\n    }\n\n    set(key, value) {\n        const index = this.hash(key);\n        this.map[index] = [key, value];\n\n        // Add load factor calculation and growth component later.\n    }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HashMap);\n\n/* if (index < 0 || index >= buckets.length) {\n  throw new Error(\"Trying to access index out of bound\");\n} */\n\n//# sourceURL=webpack://hash-map/./src/hash-map.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hash_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hash-map */ \"./src/hash-map.js\");\n\n\nconst testMap = new _hash_map__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\n\nconsole.log(testMap);\ntestMap.hash('frog');\n\n//# sourceURL=webpack://hash-map/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hash_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hash-map */ \"./src/hash-map.js\");\n\n\nconst testMap = new _hash_map__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\ntestMap.set('snake', 'black');\ntestMap.set('frog', 'green');\ntestMap.set('dolphin', 'grey');\ntestMap.set('tiger', 'orange');\nconsole.log(testMap);\n\n//# sourceURL=webpack://hash-map/./src/index.js?");
 
 /***/ })
 
