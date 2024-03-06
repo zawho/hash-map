@@ -1,7 +1,12 @@
+import LinkedList from "./linked-list";
+
 class HashMap {
 
     constructor() {
         this.map = new Array(16);
+        for (let i = 0; i < this.map.length; i++) {
+            this.map[i] = new LinkedList();
+        }
     }
 
     hash(key) {
@@ -18,9 +23,7 @@ class HashMap {
 
     set(key, value) {
         const index = this.hash(key);
-        this.map[index] = [key, value];
-
-        
+        this.map[index].prepend([key, value]);
 
         // Add load factor calculation and growth component later.
     }
