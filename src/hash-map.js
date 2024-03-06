@@ -20,6 +20,8 @@ class HashMap {
         const index = this.hash(key);
         this.map[index] = [key, value];
 
+        
+
         // Add load factor calculation and growth component later.
     }
 
