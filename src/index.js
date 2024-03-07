@@ -6,4 +6,5 @@ testMap.set('frog', 'green');
 testMap.set('owl', 'brown');
 testMap.set('dolphin', 'grey');
 testMap.set('tiger', 'orange');
-console.log(testMap);
+// console.log(testMap);
+testMap.get('frog');

@@ -17,7 +17,7 @@ class HashMap {
             hashCode = (prime * hashCode + key.charCodeAt(i));
         }
 
-        console.log(`${key} will go to bucket ${hashCode % this.map.length}`);
+        console.log(`${key} will go to bucket ${hashCode % this.map.length}.`);
         return hashCode % this.map.length;
     }
 
@@ -26,6 +26,14 @@ class HashMap {
         this.map[index].prepend([key, value]);
 
         // Add load factor calculation and growth component later.
+    }
+
+    get(key) {
+        for (let i = 0; i < this.map.length; i++) {
+            if (this.map[i].contains(key)) {
+                return;
+            }
+        }
     }
 
 }
