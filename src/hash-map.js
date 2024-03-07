@@ -31,12 +31,24 @@ class HashMap {
     get(key) {
         for (let i = 0; i < this.map.length; i++) {
             if (this.map[i].contains(key) != null) {
+                console.log(`The value of "${key}" is "${this.map[i].contains(key)}".`);
                 return;
             }
             if (i === this.map.length - 1 && this.map[i].contains(key) === null) {
                 console.log(`The "${key}" key does not exist.`);
             }
         }
+    }
+
+    has(key) {
+        for (let i = 0; i < this.map.length; i++) {
+            if (this.map[i].contains(key) != null) {
+                console.log(`This table contains the "${key}" key.`);
+                return true;
+            }
+        }
+        console.log(`This table does not contain the "${key}" key.`);
+        return false;
     }
 
 }

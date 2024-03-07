@@ -14,7 +14,6 @@ class LinkedList {
     contains(data) {
         for (let i = this.head; i; i = i.next) {
             if (i.value[0] === data) {
-                console.log(i.value);
                 return i.value[1];
             }
         }
