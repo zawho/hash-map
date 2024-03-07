@@ -30,8 +30,11 @@ class HashMap {
 
     get(key) {
         for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].contains(key)) {
+            if (this.map[i].contains(key) != null) {
                 return;
+            }
+            if (i === this.map.length - 1 && this.map[i].contains(key) === null) {
+                console.log(`The "${key}" key does not exist.`);
             }
         }
     }

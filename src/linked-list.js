@@ -11,7 +11,6 @@ class LinkedList {
         this.head = newNode;
     }
 
-
     contains(data) {
         for (let i = this.head; i; i = i.next) {
             if (i.value[0] === data) {
@@ -19,7 +18,6 @@ class LinkedList {
                 return i.value[1];
             }
         }
-        console.log(`The "${data}" key does not exist.`);
         return null;
     }
 }
