@@ -51,6 +51,24 @@ class HashMap {
         return false;
     }
 
+    /* remove(key) {
+        
+    } */
+
+    length() {
+        let length = 0;
+        for (let i = 0; i < this.map.length; i++) {
+            if (this.map[i].head != null) {
+                length += 1;
+            }
+            if (this.map[i].head != null && this.map[i].head.next != null) {
+                length += this.map[i].length();
+            }
+        }
+        console.log(`This table contains ${length} keys.`);
+        return length;
+    }
+
 }
 
 export default HashMap;

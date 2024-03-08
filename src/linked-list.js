@@ -19,6 +19,16 @@ class LinkedList {
         }
         return null;
     }
+
+    length() {
+        let length = 0;
+        for (let i = this.head; i; i = i.next) {
+            if (i.next != null) {
+                length += 1;
+            }
+        }
+        return length;
+    }
 }
 
 export default LinkedList;
