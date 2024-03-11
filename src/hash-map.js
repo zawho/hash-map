@@ -51,9 +51,12 @@ class HashMap {
         return false;
     }
 
-    /* remove(key) {
-        
-    } */
+    remove(key) { // Deal with return values for this and all functions.
+        for (let i = 0; i < this.map.length; i++) {
+            this.map[i].delete(key);
+        }
+        console.log(this);
+    }
 
     length() {
         let length = 0;

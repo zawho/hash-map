@@ -29,6 +29,42 @@ class LinkedList {
         }
         return length;
     }
+
+    delete(data) { // Add logic for nonexistant data/key and check for other edge cases.
+        let current;
+        let dataIndex;
+        let dataNext;
+        for (let i = this.head; i; i = i.next) {
+            if (i === this.head) {
+                current = 0;
+            } else {
+                current += 1;
+            }
+
+            if (i !== this.head && i.value[0] === data) {
+                dataIndex = current;
+                dataNext = i.next;
+            }
+        }
+
+        for (let i = this.head; i; i = i.next) {
+            if (i === this.head) {
+                current = 0;
+            } else {
+                current += 1;
+            }
+
+            if (i === this.head && i.value[0] === data && i.next === null) {
+                this.head = null;
+            } else if (i === this.head && i.value[0] === data && i.next != null) {
+                this.head = this.head.next;
+            }
+            
+            if (current === dataIndex - 1 && this.contains(data)) {
+                i.next = dataNext;
+            }
+        }
+    }
 }
 
 export default LinkedList;
