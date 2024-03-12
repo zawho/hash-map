@@ -55,9 +55,13 @@ class HashMap {
 
     remove(key) { // Deal with return values for this and all functions.
         for (let i = 0; i < this.map.length; i++) {
-            this.map[i].delete(key);
+            if (this.map[i].delete(key) === true) {
+                console.log(this);
+                return true;
+            }
         }
-        console.log(this);
+        console.log (`This table does not contain the "${key}" key.`)
+        return false;
     }
 
     length() {

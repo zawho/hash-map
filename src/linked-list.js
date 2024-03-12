@@ -40,7 +40,6 @@ class LinkedList {
             } else {
                 current += 1;
             }
-
             if (i !== this.head && i.value[0] === data) {
                 dataIndex = current;
                 dataNext = i.next;
@@ -53,17 +52,20 @@ class LinkedList {
             } else {
                 current += 1;
             }
-
             if (i === this.head && i.value[0] === data && i.next === null) {
                 this.head = null;
-            } else if (i === this.head && i.value[0] === data && i.next != null) {
-                this.head = this.head.next;
+                return true;
             }
-            
+            if (i === this.head && i.value[0] === data && i.next != null) {
+                this.head = this.head.next;
+                return true;
+            }
             if (current === dataIndex - 1 && this.contains(data)) {
                 i.next = dataNext;
+                return true;
             }
         }
+        return false;
     }
 }
 
