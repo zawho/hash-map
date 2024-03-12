@@ -30,14 +30,16 @@ class HashMap {
 
     get(key) {
         for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].contains(key) != null) {
-                console.log(`The value of "${key}" is "${this.map[i].contains(key)}".`);
-                return;
+            const value = this.map[i].contains(key);
+            if (value != null) {
+                console.log(`The value of "${key}" is "${value}".`);
+                return value;
             }
             if (i === this.map.length - 1 && this.map[i].contains(key) === null) {
                 console.log(`The "${key}" key does not exist.`);
             }
         }
+        return null;
     }
 
     has(key) {

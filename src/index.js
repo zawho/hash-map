@@ -11,7 +11,7 @@ testMap.set('penguin', 'tuxedo');
 testMap.set('dolphin', 'grey');
 testMap.set('tiger', 'orange');
 testMap.set('octopus', 'purple');
-// testMap.get('frog');
+testMap.get('frog');
 // testMap.has('tiger');
 // testMap.length();
 // console.log(testMap);
