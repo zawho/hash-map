@@ -15,4 +15,5 @@ testMap.set('octopus', 'purple');
 // testMap.has('tiger');
 // testMap.remove('owl');
 // testMap.length();
-console.log(testMap);
+// console.log(testMap);
+testMap.clear();

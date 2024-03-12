@@ -30,7 +30,7 @@ class LinkedList {
         return length;
     }
 
-    delete(data) { // Add logic for nonexistant data/key and check for other edge cases.
+    delete(data) {
         let current;
         let dataIndex;
         let dataNext;

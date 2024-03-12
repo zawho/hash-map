@@ -53,7 +53,7 @@ class HashMap {
         return false;
     }
 
-    remove(key) { // Deal with return values for this and all functions.
+    remove(key) {
         for (let i = 0; i < this.map.length; i++) {
             if (this.map[i].delete(key) === true) {
                 console.log(this);
@@ -76,6 +76,12 @@ class HashMap {
         }
         console.log(`This table contains ${length} keys.`);
         return length;
+    }
+
+    clear() {
+        for (let i = 0; i < this.map.length; i++) {
+            console.log(this.map[i]);
+        }
     }
 
 }
