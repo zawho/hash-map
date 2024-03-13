@@ -80,14 +80,11 @@ class HashMap {
 
     clear() {
         for (let i = 0; i < this.map.length; i++) {
-            console.log(this.map[i]);
+            if (this.map[i].head != null) {
+                this.map[i].head = null;
+            }
         }
     }
-
 }
 
 export default HashMap;
-
-/* if (index < 0 || index >= buckets.length) {
-  throw new Error("Trying to access index out of bound");
-} */
