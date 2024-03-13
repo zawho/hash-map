@@ -67,6 +67,17 @@ class LinkedList {
         }
         return false;
     }
+
+    allValues() {
+        const arr = [];
+        for (let i = this.head; i; i = i.next) {
+            arr.push(i.value);
+        }
+        if (arr.length > 0) {
+            return arr;
+        }
+        return null;
+    }
 }
 
 export default LinkedList;

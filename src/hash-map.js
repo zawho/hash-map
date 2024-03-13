@@ -85,6 +85,15 @@ class HashMap {
             }
         }
     }
+
+    keys() {
+        for (let i = 0; i < this.map.length; i++) {
+            if (this.map[i].allValues()) {
+               console.log(this.map[i].allValues());
+               // figure out how to add all arrays together into one big array.
+            }
+        }
+    }
 }
 
 export default HashMap;
