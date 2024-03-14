@@ -16,5 +16,6 @@ testMap.set('octopus', 'purple');
 // testMap.remove('owl');
 // testMap.length();
 // testMap.clear();
+// testMap.keys();
+// testMap.values();
 // console.log(testMap);
-testMap.keys();

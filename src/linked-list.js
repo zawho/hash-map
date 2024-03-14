@@ -68,10 +68,34 @@ class LinkedList {
         return false;
     }
 
+    keysAndValues(key, value) {
+        const arr = [];
+        if (key === true && value === null) {
+            for (let i = this.head; i; i = i.next) {
+                arr.push(i.value[0]);
+            }
+            return arr;
+        }
+        if (value === true && key === null) {
+            for (let i = this.head; i; i = i.next) {
+                arr.push(i.value[1]);
+            }
+            return arr;
+        }
+    }
+
     allKeys() {
         const arr = [];
         for (let i = this.head; i; i = i.next) {
             arr.push(i.value[0]);
+        }
+        return arr;
+    }
+
+    allValues() {
+        const arr = [];
+        for (let i = this.head; i; i = i.next) {
+            arr.push(i.value[1]);
         }
         return arr;
     }

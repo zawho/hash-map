@@ -90,13 +90,26 @@ class HashMap {
         const allKeysArr = [];
         let keyArr;
         for (let i = 0; i < this.map.length; i++) {
-            keyArr = this.map[i].allKeys();
+            keyArr = this.map[i].keysAndValues(true, null);
             for (let j = 0; j < keyArr.length; j++) {
                 allKeysArr.push(keyArr[j]);
             } 
         }
         console.log(allKeysArr);
         return allKeysArr;
+    }
+
+    values() {
+        const allValuesArr = [];
+        let valueArr;
+        for (let i = 0; i < this.map.length; i++) {
+            valueArr = this.map[i].keysAndValues(null, true);
+            for (let j = 0; j < valueArr.length; j++) {
+                allValuesArr.push(valueArr[j]);
+            } 
+        }
+        console.log(allValuesArr);
+        return allValuesArr;
     }
     
 }
