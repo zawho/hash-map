@@ -87,13 +87,18 @@ class HashMap {
     }
 
     keys() {
+        const allKeysArr = [];
+        let keyArr;
         for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].allValues()) {
-               console.log(this.map[i].allValues());
-               // figure out how to add all arrays together into one big array.
-            }
+            keyArr = this.map[i].allKeys();
+            for (let j = 0; j < keyArr.length; j++) {
+                allKeysArr.push(keyArr[j]);
+            } 
         }
+        console.log(allKeysArr);
+        return allKeysArr;
     }
+    
 }
 
 export default HashMap;

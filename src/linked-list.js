@@ -68,16 +68,14 @@ class LinkedList {
         return false;
     }
 
-    allValues() {
+    allKeys() {
         const arr = [];
         for (let i = this.head; i; i = i.next) {
-            arr.push(i.value);
+            arr.push(i.value[0]);
         }
-        if (arr.length > 0) {
-            return arr;
-        }
-        return null;
+        return arr;
     }
+
 }
 
 export default LinkedList;
