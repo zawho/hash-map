@@ -111,6 +111,19 @@ class HashMap {
         console.log(allValuesArr);
         return allValuesArr;
     }
+
+    entries() {
+        const allEntriesArr = [];
+        let entryArr;
+        for (let i = 0; i < this.map.length; i++) {
+            entryArr = this.map[i].keysAndValues(true, true);
+            for (let j = 0; j < entryArr.length; j++) {
+                allEntriesArr.push(entryArr[j]);
+            } 
+        }
+        console.log(allEntriesArr);
+        return allEntriesArr;
+    }
     
 }
 

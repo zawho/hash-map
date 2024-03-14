@@ -18,4 +18,5 @@ testMap.set('octopus', 'purple');
 // testMap.clear();
 // testMap.keys();
 // testMap.values();
-// console.log(testMap);
+// testMap.entries();
+console.log(testMap);
