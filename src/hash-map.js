@@ -24,8 +24,22 @@ class HashMap {
     set(key, value) {
         const index = this.hash(key);
         this.map[index].prepend([key, value]);
+        
+        const loadFactor = 0.75;
+        let filledBuckets = 0;
+        
+        for (let i = 0; i < this.map.length; i++) {
+            if (this.map[i].head != null) {
+                filledBuckets += 1;
+            }
+        }
 
-        // Add load factor calculation and growth component later.
+        const currentCapacity = filledBuckets / this.map.length;
+
+        if (currentCapacity >= loadFactor) {
+            this.map[this.map.length] = new LinkedList();
+        }
+
     }
 
     get(key) {
