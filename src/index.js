@@ -1,4 +1,5 @@
 import HashMap from "./hash-map";
+import HashSet from "./hash-set";
 
 const testMap = new HashMap();
 testMap.set('snake', 'black');
@@ -20,3 +21,21 @@ testMap.set('octopus', 'purple');
 // testMap.values();
 // testMap.entries();
 console.log(testMap);
+
+// const testSet = new HashSet();
+// testSet.set('snake', 'black');
+// testSet.set('frog', 'green');
+// testSet.set('owl', 'brown');
+// testSet.set('giraffe', 'yellow');
+// testSet.set('zebra', 'striped');
+// testSet.set('cow', 'spotted');
+// testSet.set('penguin', 'tuxedo');
+// testSet.set('dolphin', 'grey');
+// testSet.set('tiger', 'orange');
+// testSet.set('octopus', 'purple');
+// testSet.has('tiger');
+// testSet.remove('owl');
+// testSet.length();
+// testSet.clear();
+// testSet.keys();
+// console.log(testSet);

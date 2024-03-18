@@ -13,8 +13,11 @@ class LinkedList {
 
     contains(data) {
         for (let i = this.head; i; i = i.next) {
-            if (i.value[0] === data) {
+            if (i.value.length > 1 && i.value[0] === data) {
                 return i.value[1];
+            }
+            if (i.value.length === 1 && i.value[0] === data) {
+                return i.value[0];
             }
         }
         return null;
