@@ -1,1 +1,3 @@
 March 4, 2024 - I am starting the hash map project as part of The Odin Project's Javascript track. I will construct a hash map data structure complete with a hashing function and several additional additional functions for manipulating the hash map.
+
+March 18, 2024 - I have finished the hash map project. Everything went pretty smoothly after I figured out the basic structure of the hash map. One highlight was being able to incorporate my linked list and list node modules from the linked list project I worked on previously, saving me a lot of effort in writing functions for handling the lists inside each bucket of the hash map.
