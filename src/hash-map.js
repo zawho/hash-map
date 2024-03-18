@@ -70,7 +70,7 @@ class HashMap {
     remove(key) {
         for (let i = 0; i < this.map.length; i++) {
             if (this.map[i].delete(key) === true) {
-                console.log(this);
+                console.log(`The ${key} key has been removed.`);
                 return true;
             }
         }

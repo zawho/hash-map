@@ -3,9 +3,9 @@ import LinkedList from "./linked-list";
 class HashSet {
 
     constructor() {
-        this.map = new Array(16);
-        for (let i = 0; i < this.map.length; i++) {
-            this.map[i] = new LinkedList();
+        this.set = new Array(16);
+        for (let i = 0; i < this.set.length; i++) {
+            this.set[i] = new LinkedList();
         }
     }
 
@@ -17,34 +17,34 @@ class HashSet {
             hashCode = (prime * hashCode + key.charCodeAt(i));
         }
 
-        console.log(`${key} will go to bucket ${hashCode % this.map.length}.`);
-        return hashCode % this.map.length;
+        console.log(`${key} will go to bucket ${hashCode % this.set.length}.`);
+        return hashCode % this.set.length;
     }
 
-    set(key) {
+    add(key) {
         const index = this.hash(key);
-        this.map[index].prepend([key]);
+        this.set[index].prepend([key]);
         
         const loadFactor = 0.75;
         let filledBuckets = 0;
         
-        for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].head != null) {
+        for (let i = 0; i < this.set.length; i++) {
+            if (this.set[i].head != null) {
                 filledBuckets += 1;
             }
         }
 
-        const currentCapacity = filledBuckets / this.map.length;
+        const currentCapacity = filledBuckets / this.set.length;
 
         if (currentCapacity >= loadFactor) {
-            this.map[this.map.length] = new LinkedList();
+            this.set[this.set.length] = new LinkedList();
         }
 
     }
 
     has(key) {
-        for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].contains(key) != null) {
+        for (let i = 0; i < this.set.length; i++) {
+            if (this.set[i].contains(key) != null) {
                 console.log(`This table contains the "${key}" key.`);
                 return true;
             }
@@ -54,9 +54,9 @@ class HashSet {
     }
 
     remove(key) {
-        for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].delete(key) === true) {
-                console.log(this);
+        for (let i = 0; i < this.set.length; i++) {
+            if (this.set[i].delete(key) === true) {
+                console.log(`The ${key} key has been removed.`)
                 return true;
             }
         }
@@ -66,12 +66,12 @@ class HashSet {
 
     length() {
         let length = 0;
-        for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].head != null) {
+        for (let i = 0; i < this.set.length; i++) {
+            if (this.set[i].head != null) {
                 length += 1;
             }
-            if (this.map[i].head != null && this.map[i].head.next != null) {
-                length += this.map[i].length();
+            if (this.set[i].head != null && this.set[i].head.next != null) {
+                length += this.set[i].length();
             }
         }
         console.log(`This table contains ${length} keys.`);
@@ -79,9 +79,9 @@ class HashSet {
     }
 
     clear() {
-        for (let i = 0; i < this.map.length; i++) {
-            if (this.map[i].head != null) {
-                this.map[i].head = null;
+        for (let i = 0; i < this.set.length; i++) {
+            if (this.set[i].head != null) {
+                this.set[i].head = null;
             }
         }
     }
@@ -89,8 +89,8 @@ class HashSet {
     keys() {
         const allKeysArr = [];
         let keyArr;
-        for (let i = 0; i < this.map.length; i++) {
-            keyArr = this.map[i].keysAndValues(true, null);
+        for (let i = 0; i < this.set.length; i++) {
+            keyArr = this.set[i].keysAndValues(true, null);
             for (let j = 0; j < keyArr.length; j++) {
                 allKeysArr.push(keyArr[j]);
             } 
